@@ -11,13 +11,6 @@ mercadopago.configure({
 app.use(express.json());
 app.use(cors());
 
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://pinguinos-kids.vercel.app');
-  res.header('Content-Type', 'application/json');
-  next();
-});
-
 app.get("/", (req, res) => {
   res.send("Todo okey");
 });
@@ -49,6 +42,7 @@ app.post("/create_preference", (req, res) => {
     });
 });
 
-app.listen(8080, () => {
-  console.log("servidor corriendo");
+const puerto = process.env.PORT || 8080;
+app.listen(puerto, () => {
+  console.log(`Servidor corriendo en el puerto ${puerto}`);
 });
