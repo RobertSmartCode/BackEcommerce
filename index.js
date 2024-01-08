@@ -20,7 +20,7 @@ app.post("/create_preference", (req, res) => {
       items: req.body.items,
       back_urls: {
         success: "https://pinguinos-kids.vercel.app/checkout/paymentsuccess",
-        failure: "https://pinguinos-kids.vercel.app/checkout/paymentsuccess",
+        failure: "https://pinguinos-kids.vercel.app/checkout/next",
         pending: "",
       },
       auto_return: "approved",
